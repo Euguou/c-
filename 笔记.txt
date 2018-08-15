@@ -1,0 +1,37 @@
+﻿BFS
+while（!q.empty)
+{
+	t=q.front();
+	q.pop();
+	vis++;
+}
+
+#include <queue>
+
+
+模板
+int trans(int x,y)
+{
+	return x*10000+y;
+}
+void bfs(int x,int y)
+{
+	int beg=trans(x,y);
+	q.push(beg);
+	memset(d,-1,sizeof (d));
+	d[x][y]=0;
+		while (	!q.empty())
+		{
+			int t = q.front();
+			q.pop();
+			x=t/10000;
+			y=t%10000;
+			vis[x][y]=1;
+			if(d[x-1][y]==0)
+			if(judge(x-1,y)) Q.push(trans(x-1,y)); 
+			if(judge(x,y-1)) Q.push(trans(x,y-1));
+			if(judge(x+1,y)) Q.push(trans(x+1,y));
+			if(judge(x,y+1)) Q.push(trans(x,y+1));
+		}
+}
+

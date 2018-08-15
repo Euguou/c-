@@ -1,0 +1,19 @@
+速度大比拼
+								使用时间（毫秒）
+读入方式            10（5）个整数   10（6）个整数  10（7）个整数    10M个字符串
+									
+								测试环境：i7+12G
+ifstream+fin			16				103			 1001      			53
+FILE*+fscanf			55				345			 3366				63
+freopen+cin				67				440			 4378				472
+freopen+cin+sync_scanf  11				103			 1024				51
+freopen+scanf			32				318			 3112				60
+								测试环境：i2+2G
+ifstream+fin			65				982			 6148				361
+FILE*+fscanf			65				692			 4829				170
+freopen+cin				727				6449		 62738				4193
+freopen+cin+sync_scanf  72				673			 6538				375
+freopen+scanf			55				511		 	 4574				162
+
+
+iso::sync_with_stdio(false)     ------关闭同步
